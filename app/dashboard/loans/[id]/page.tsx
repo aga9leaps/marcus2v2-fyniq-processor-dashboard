@@ -1,18 +1,6 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
-
-// Required for static export
-export function generateStaticParams() {
-  // Generate static paths for all loan IDs
-  return [
-    { id: 'LOAN-001' },
-    { id: 'LOAN-002' },
-    { id: 'LOAN-003' },
-    { id: 'LOAN-004' },
-    { id: 'LOAN-005' },
-  ];
-}
+import Link from 'next/link';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -43,7 +31,6 @@ import {
 
 export default function LoanDetailPage({ params }: { params: { id: string } }) {
   const { id } = params;
-  const router = useRouter();
   const loan = getLoanById(id);
 
   if (!loan) {
@@ -52,10 +39,12 @@ export default function LoanDetailPage({ params }: { params: { id: string } }) {
         <AlertCircle className="w-16 h-16 text-status-critical mx-auto mb-4" />
         <h2 className="text-2xl font-bold text-text-primary mb-2">Loan Not Found</h2>
         <p className="text-text-secondary mb-4">The loan you're looking for doesn't exist.</p>
-        <Button onClick={() => router.push('/dashboard')}>
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Back to Dashboard
-        </Button>
+        <Link href="/dashboard">
+          <Button>
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Dashboard
+          </Button>
+        </Link>
       </div>
     );
   }
@@ -75,14 +64,15 @@ export default function LoanDetailPage({ params }: { params: { id: string } }) {
   return (
     <div>
       {/* Back Button */}
-      <Button
-        variant="ghost"
-        className="mb-4 text-text-secondary hover:text-text-primary"
-        onClick={() => router.push('/dashboard')}
-      >
-        <ArrowLeft className="w-4 h-4 mr-2" />
-        Back to Pipeline
-      </Button>
+      <Link href="/dashboard">
+        <Button
+          variant="ghost"
+          className="mb-4 text-text-secondary hover:text-text-primary"
+        >
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          Back to Pipeline
+        </Button>
+      </Link>
 
       {/* Loan Header */}
       <Card className="p-6 mb-6 border-border-subtle">
