@@ -224,14 +224,9 @@ export default function DashboardPage() {
             {['document_collection', 'underwriting', 'approval', 'pre_closing', 'funded'].map((stage) => {
               const stageLoans = MOCK_LOANS.filter(loan => loan.stage === stage);
               const stageName = formatStage(stage as any);
-              const stageColor = stage === 'document_collection' ? 'bg-purple-100 border-purple-300' :
-                                stage === 'underwriting' ? 'bg-blue-100 border-blue-300' :
-                                stage === 'approval' ? 'bg-yellow-100 border-yellow-300' :
-                                stage === 'pre_closing' ? 'bg-green-100 border-green-300' :
-                                'bg-gray-100 border-gray-300';
 
               return (
-                <Card key={stage} className={`w-80 flex-shrink-0 border-2 ${stageColor}`}>
+                <Card key={stage} className="w-80 flex-shrink-0 border-2 border-border-medium bg-bg-secondary">
                   <div className="p-4 border-b border-border-subtle bg-white">
                     <div className="flex items-center justify-between">
                       <h3 className="font-semibold text-text-primary">{stageName}</h3>
@@ -276,9 +271,7 @@ export default function DashboardPage() {
                             </div>
                             <div className="w-full bg-bg-secondary rounded-full h-1">
                               <div
-                                className={`h-1 rounded-full ${
-                                  loan.completionPercentage === 100 ? 'bg-green-500' : 'bg-text-primary'
-                                }`}
+                                className="h-1 rounded-full bg-text-primary"
                                 style={{ width: `${loan.completionPercentage}%` }}
                               />
                             </div>
@@ -291,9 +284,9 @@ export default function DashboardPage() {
               );
             })}
           </div>
-          <div className="mt-4 p-4 bg-accent-light rounded-lg border border-accent-border">
+          <div className="mt-4 p-4 bg-bg-secondary rounded-lg border border-border-subtle">
             <p className="text-sm text-text-secondary">
-              <strong>💡 Kanban Feature:</strong> Visual pipeline showing loans across stages.
+              <strong>Kanban Feature:</strong> Visual pipeline showing loans across stages.
               In Phase 2, you'll be able to drag-and-drop cards to move loans between stages,
               with automatic status updates and notifications.
             </p>
