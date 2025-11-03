@@ -1,6 +1,18 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+
+// Required for static export
+export function generateStaticParams() {
+  // Generate static paths for all loan IDs
+  return [
+    { id: 'LOAN-001' },
+    { id: 'LOAN-002' },
+    { id: 'LOAN-003' },
+    { id: 'LOAN-004' },
+    { id: 'LOAN-005' },
+  ];
+}
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
