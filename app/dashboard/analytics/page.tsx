@@ -23,13 +23,13 @@ export default function AnalyticsPage() {
       </div>
 
       {/* Feature Explanation Card */}
-      <Card className="p-6 mb-6 bg-accent-light border-accent-border">
+      <Card className="p-6 mb-6 bg-bg-secondary border-border-subtle">
         <div className="flex items-start gap-4">
-          <div className="w-12 h-12 bg-accent-primary rounded-lg flex items-center justify-center flex-shrink-0">
-            <BarChart3 className="w-6 h-6 text-white" />
+          <div className="w-12 h-12 bg-bg-tertiary rounded-lg flex items-center justify-center flex-shrink-0">
+            <BarChart3 className="w-6 h-6 text-text-secondary" />
           </div>
           <div>
-            <h2 className="text-lg font-semibold text-text-primary mb-2">📊 Analytics Features (Phase 2)</h2>
+            <h2 className="text-lg font-semibold text-text-primary mb-2">Analytics Features (Phase 2)</h2>
             <p className="text-sm text-text-secondary mb-3">
               The Analytics dashboard provides operations managers with deep insights into team performance and pipeline health.
             </p>
@@ -56,15 +56,15 @@ export default function AnalyticsPage() {
               </div>
             </div>
             <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="p-4 bg-white rounded-lg border border-accent-border">
-                <p className="text-xs text-text-tertiary mb-2">📊 <strong>Manager View:</strong></p>
+              <div className="p-4 bg-bg-tertiary rounded-lg border border-border-subtle">
+                <p className="text-xs text-text-tertiary mb-2"><strong>Manager View:</strong></p>
                 <p className="text-sm text-text-secondary">
                   Operations managers can compare processor performance, identify training needs, and reallocate workload.
                   Charts show trends over time (weekly/monthly/quarterly).
                 </p>
               </div>
-              <div className="p-4 bg-white rounded-lg border border-accent-border">
-                <p className="text-xs text-text-tertiary mb-2">🎯 <strong>Goal Tracking:</strong></p>
+              <div className="p-4 bg-bg-tertiary rounded-lg border border-border-subtle">
+                <p className="text-xs text-text-tertiary mb-2"><strong>Goal Tracking:</strong></p>
                 <p className="text-sm text-text-secondary">
                   Set team goals (e.g., "95% on-time rate", "14 days avg close") and track progress.
                   Visual indicators show if team is on track or needs intervention.
@@ -79,19 +79,19 @@ export default function AnalyticsPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <Card className="p-4">
           <div className="flex items-center justify-between mb-2">
-            <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-              <Target className="w-5 h-5 text-blue-600" />
+            <div className="w-10 h-10 bg-bg-secondary rounded-lg flex items-center justify-center">
+              <Target className="w-5 h-5 text-text-secondary" />
             </div>
-            <TrendingUp className="w-4 h-4 text-green-600" />
+            <TrendingUp className="w-4 h-4 text-text-tertiary" />
           </div>
           <p className="text-2xl font-bold text-text-primary">{totalLoans}</p>
           <p className="text-sm text-text-secondary">Active Loans</p>
-          <p className="text-xs text-green-600 mt-1">+3 from last week</p>
+          <p className="text-xs text-text-tertiary mt-1">+3 from last week</p>
         </Card>
 
-        <Card className="p-4">
+        <Card className="p-4 border-l-4 border-l-status-critical">
           <div className="flex items-center justify-between mb-2">
-            <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-bg-secondary rounded-lg flex items-center justify-center">
               <AlertTriangle className="w-5 h-5 text-status-critical" />
             </div>
             <TrendingDown className="w-4 h-4 text-status-critical" />
@@ -103,26 +103,26 @@ export default function AnalyticsPage() {
 
         <Card className="p-4">
           <div className="flex items-center justify-between mb-2">
-            <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-              <CheckCircle className="w-5 h-5 text-green-600" />
+            <div className="w-10 h-10 bg-bg-secondary rounded-lg flex items-center justify-center">
+              <CheckCircle className="w-5 h-5 text-text-secondary" />
             </div>
-            <TrendingUp className="w-4 h-4 text-green-600" />
+            <TrendingUp className="w-4 h-4 text-text-tertiary" />
           </div>
           <p className="text-2xl font-bold text-text-primary">{avgOnTimeRate}%</p>
           <p className="text-sm text-text-secondary">On-Time Rate</p>
-          <p className="text-xs text-green-600 mt-1">+5% from last month</p>
+          <p className="text-xs text-text-tertiary mt-1">+5% from last month</p>
         </Card>
 
         <Card className="p-4">
           <div className="flex items-center justify-between mb-2">
-            <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-              <DollarSign className="w-5 h-5 text-purple-600" />
+            <div className="w-10 h-10 bg-bg-secondary rounded-lg flex items-center justify-center">
+              <DollarSign className="w-5 h-5 text-text-secondary" />
             </div>
-            <TrendingUp className="w-4 h-4 text-green-600" />
+            <TrendingUp className="w-4 h-4 text-text-tertiary" />
           </div>
           <p className="text-2xl font-bold text-text-primary">$18.5M</p>
           <p className="text-sm text-text-secondary">Closing This Week</p>
-          <p className="text-xs text-text-secondary mt-1">{closingThisWeek} loans</p>
+          <p className="text-xs text-text-tertiary mt-1">{closingThisWeek} loans</p>
         </Card>
       </div>
 
@@ -138,7 +138,7 @@ export default function AnalyticsPage() {
                 <span className="text-sm font-semibold text-text-primary">2 loans</span>
               </div>
               <div className="w-full bg-bg-secondary rounded-full h-3">
-                <div className="bg-purple-500 h-3 rounded-full" style={{ width: '40%' }}></div>
+                <div className="bg-text-primary h-3 rounded-full" style={{ width: '40%' }}></div>
               </div>
             </div>
             <div>
@@ -147,7 +147,7 @@ export default function AnalyticsPage() {
                 <span className="text-sm font-semibold text-text-primary">2 loans</span>
               </div>
               <div className="w-full bg-bg-secondary rounded-full h-3">
-                <div className="bg-blue-500 h-3 rounded-full" style={{ width: '40%' }}></div>
+                <div className="bg-text-primary h-3 rounded-full" style={{ width: '40%' }}></div>
               </div>
             </div>
             <div>
@@ -156,7 +156,7 @@ export default function AnalyticsPage() {
                 <span className="text-sm font-semibold text-text-primary">1 loan</span>
               </div>
               <div className="w-full bg-bg-secondary rounded-full h-3">
-                <div className="bg-green-500 h-3 rounded-full" style={{ width: '20%' }}></div>
+                <div className="bg-text-primary h-3 rounded-full" style={{ width: '20%' }}></div>
               </div>
             </div>
           </div>
@@ -181,7 +181,7 @@ export default function AnalyticsPage() {
                   </div>
                 </div>
                 <div className="text-right">
-                  <p className={`text-sm font-semibold ${processor.onTimeRate >= 90 ? 'text-green-600' : 'text-status-warning'}`}>
+                  <p className="text-sm font-semibold text-text-primary">
                     {processor.onTimeRate}%
                   </p>
                   <p className="text-xs text-text-tertiary">On-time</p>

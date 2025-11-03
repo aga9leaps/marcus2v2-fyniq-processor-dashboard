@@ -31,8 +31,8 @@ import {
 export default function DashboardPage() {
   const router = useRouter();
   const [expandedSections, setExpandedSections] = useState({
-    atRisk: true,
-    closingToday: true,
+    atRisk: false,
+    closingToday: false,
     allOther: false,
   });
   const [viewMode, setViewMode] = useState<'list' | 'kanban'>('list');

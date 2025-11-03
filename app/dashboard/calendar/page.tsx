@@ -49,13 +49,13 @@ export default function CalendarPage() {
       </div>
 
       {/* Feature Explanation Card */}
-      <Card className="p-6 mb-6 bg-accent-light border-accent-border">
+      <Card className="p-6 mb-6 bg-bg-secondary border-border-subtle">
         <div className="flex items-start gap-4">
-          <div className="w-12 h-12 bg-accent-primary rounded-lg flex items-center justify-center flex-shrink-0">
-            <CalendarIcon className="w-6 h-6 text-white" />
+          <div className="w-12 h-12 bg-bg-tertiary rounded-lg flex items-center justify-center flex-shrink-0">
+            <CalendarIcon className="w-6 h-6 text-text-secondary" />
           </div>
           <div>
-            <h2 className="text-lg font-semibold text-text-primary mb-2">📅 Calendar Features (Phase 2)</h2>
+            <h2 className="text-lg font-semibold text-text-primary mb-2">Calendar Features (Phase 2)</h2>
             <p className="text-sm text-text-secondary mb-3">
               The Calendar view will help processors manage their time and never miss critical deadlines.
             </p>
@@ -81,8 +81,8 @@ export default function CalendarPage() {
                 </ul>
               </div>
             </div>
-            <div className="mt-4 p-4 bg-white rounded-lg border border-accent-border">
-              <p className="text-xs text-text-tertiary mb-2">💡 <strong>Use Case Example:</strong></p>
+            <div className="mt-4 p-4 bg-bg-tertiary rounded-lg border border-border-subtle">
+              <p className="text-xs text-text-tertiary mb-2"><strong>Use Case Example:</strong></p>
               <p className="text-sm text-text-secondary">
                 A processor with 18 active loans can see all closing dates at a glance. The calendar shows "Wilson Property - 2 PM Closing" in red on Nov 5,
                 with automatic reminders sent to all parties 24 hours before. The processor can click to see all required documents and who needs to attend.
@@ -135,15 +135,15 @@ export default function CalendarPage() {
             <div className="mt-4 space-y-2 text-xs">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-status-critical rounded"></div>
-                <span className="text-text-secondary">Closings</span>
+                <span className="text-text-secondary">Critical events</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-text-primary rounded"></div>
-                <span className="text-text-secondary">Calls</span>
+                <span className="text-text-secondary">Scheduled events</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-accent-primary rounded"></div>
-                <span className="text-text-secondary">Meetings</span>
+                <div className="w-3 h-3 bg-bg-tertiary rounded border border-border-medium"></div>
+                <span className="text-text-secondary">All other events</span>
               </div>
             </div>
           </Card>
@@ -182,14 +182,10 @@ export default function CalendarPage() {
                 <Card key={event.id} className="p-4 border-l-4 border-l-accent-primary hover:shadow-md transition-shadow">
                   <div className="flex items-start justify-between mb-2">
                     <div className="flex items-start gap-3 flex-1">
-                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
-                        event.type === 'closing' ? 'bg-status-critical-light' :
-                        event.type === 'call' ? 'bg-blue-100' :
-                        'bg-green-100'
-                      }`}>
+                      <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-bg-secondary">
                         {event.type === 'closing' && <CalendarIcon className="w-5 h-5 text-status-critical" />}
-                        {event.type === 'call' && <Clock className="w-5 h-5 text-blue-600" />}
-                        {event.type === 'meeting' && <Users className="w-5 h-5 text-green-600" />}
+                        {event.type === 'call' && <Clock className="w-5 h-5 text-text-secondary" />}
+                        {event.type === 'meeting' && <Users className="w-5 h-5 text-text-secondary" />}
                       </div>
                       <div className="flex-1">
                         <h4 className="font-semibold text-text-primary">{event.title}</h4>
