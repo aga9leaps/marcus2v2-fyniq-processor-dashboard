@@ -43,23 +43,11 @@ export default function LoginPage() {
         </div>
 
         {/* Demo Credentials Note */}
-        <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-          <p className="text-sm text-text-primary mb-2">
-            <strong className="text-blue-700">🎭 Demo Mode - Phase 1 UI/UX Mockup</strong>
-          </p>
-          <p className="text-xs text-text-secondary mb-2">
-            Any email/password combination works for testing:
-          </p>
-          <div className="space-y-1 text-xs">
-            <p className="font-mono bg-white px-2 py-1 rounded border border-border-subtle">
-              Email: processor@fyniq.com
-            </p>
-            <p className="font-mono bg-white px-2 py-1 rounded border border-border-subtle">
-              Password: demo123
-            </p>
-          </div>
-          <p className="text-xs text-text-tertiary mt-2">
-            Real authentication will be added in Phase 2
+        <div className="mb-6 p-4 bg-bg-secondary border border-border-subtle rounded-lg">
+          <p className="text-sm text-text-secondary">
+            <strong>Demo credentials:</strong><br />
+            Email: processor@fyniq.com<br />
+            Password: demo123
           </p>
         </div>
 
